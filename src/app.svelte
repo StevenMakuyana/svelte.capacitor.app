@@ -6,15 +6,16 @@
   import Contact from "./pages/public/contact.svelte";
   import Header from "./components/layout/header.svelte";
   import Footer from "./components/layout/footer.svelte";
-  router.base("/");
 </script>
 
 <div>
   <Header />
   <section>
-    <Route path="/"><Home /></Route>
-    <Route path="/about"><About /></Route>
-    <Route path="/contacts"><Contact /></Route>
+    <Route path="/*">
+      <Route path="/"><Home /></Route>
+      <Route path="/about"><About /></Route>
+      <Route path="/contacts"><Contact /></Route>
+    </Route>
   </section>
   <Footer />
 </div>
